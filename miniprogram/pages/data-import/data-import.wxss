@@ -1,0 +1,115 @@
+.section:first-child {
+  margin-top: 0;
+}
+
+.field-label {
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.hint {
+  margin-top: 8rpx;
+}
+
+.paste-area {
+  width: 100%;
+  height: 320rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 8rpx;
+  background: #fbfbfa;
+  font-size: 26rpx;
+  font-family: Consolas, Monaco, monospace;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.small-button {
+  flex: none;
+  margin-right: 20rpx;
+  padding: 12rpx 24rpx;
+  border: 1rpx solid #0f766e;
+  border-radius: 8rpx;
+  color: #0f766e;
+  font-size: 26rpx;
+}
+
+.ghost-button {
+  margin-top: 20rpx;
+  border: 1rpx solid #0f766e;
+  border-radius: 8rpx;
+  background: #ffffff;
+  color: #0f766e;
+  font-size: 28rpx;
+}
+
+.error-card {
+  background: #fffbfa;
+}
+
+.error-title {
+  color: #b42318;
+}
+
+.error-item {
+  padding: 14rpx 0;
+  border-top: 1rpx solid #f4e4e1;
+}
+
+.error-pos {
+  display: block;
+  color: #b42318;
+  font-size: 24rpx;
+}
+
+.error-text {
+  display: block;
+  margin-top: 6rpx;
+  color: #475467;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+/* 横向滚动：内层必须 inline-block 且不换行，否则 scroll-x 不会生效 */
+.preview-scroll {
+  width: 100%;
+  margin-bottom: 24rpx;
+}
+
+.preview-table {
+  display: inline-block;
+}
+
+.preview-row {
+  display: flex;
+}
+
+.cell {
+  flex: none;
+  width: 130rpx;
+  padding: 14rpx 12rpx;
+  border-bottom: 1rpx solid #eef2f7;
+  font-size: 26rpx;
+  text-align: right;
+}
+
+.cell-date {
+  width: 200rpx;
+  color: #667085;
+  text-align: left;
+}
+
+.preview-head .cell {
+  background: #f7f9f8;
+  font-weight: 700;
+}
+
+.import-button {
+  width: 100%;
+}

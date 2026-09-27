@@ -1,0 +1,10 @@
+{
+  "name": "funnel-analytics-miniprogram",
+  "version": "0.1.0",
+  "private": true,
+  "description": "微信原生小程序 + 小程序·云开发项目骨架",
+  "scripts": {
+    "validate": "node tests/validate-miniapp.js",
+    "test": "node tests/validate-miniapp.js"
+  }
+}

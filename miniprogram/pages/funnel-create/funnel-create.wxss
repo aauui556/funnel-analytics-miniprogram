@@ -1,0 +1,111 @@
+.page {
+  padding-bottom: 200rpx;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.field-label {
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+}
+
+.field-input {
+  height: 80rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 8rpx;
+  background: #fbfbfa;
+  font-size: 30rpx;
+}
+
+.hint {
+  margin-bottom: 16rpx;
+}
+
+.scenario-group {
+  display: flex;
+}
+
+.scenario-item {
+  display: flex;
+  align-items: center;
+  margin-right: 32rpx;
+}
+
+.scenario-label {
+  margin-left: 8rpx;
+  font-size: 28rpx;
+}
+
+.stage-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.stage-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.stage-index {
+  flex: none;
+  width: 44rpx;
+  color: #667085;
+  font-size: 26rpx;
+}
+
+.stage-input {
+  flex: 1;
+  height: 72rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 8rpx;
+  background: #fbfbfa;
+  font-size: 28rpx;
+}
+
+.stage-remove {
+  flex: none;
+  margin-left: 16rpx;
+  padding: 12rpx 8rpx;
+  color: #b42318;
+  font-size: 26rpx;
+}
+
+.stage-add {
+  margin-top: 8rpx;
+  padding: 20rpx 0;
+  border: 1rpx dashed #c8d0d8;
+  border-radius: 8rpx;
+  color: #0f766e;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 达到上下限时保留占位，避免按钮突然消失导致布局跳动；只变灰、不响应点击 */
+.is-disabled {
+  color: #b0b7bf;
+  border-color: #eceff3;
+}
+
+.error {
+  margin-bottom: 20rpx;
+  padding: 20rpx 24rpx;
+  border-radius: 8rpx;
+  background: #fef3f2;
+  color: #b42318;
+  font-size: 26rpx;
+}
+
+.save-button {
+  position: fixed;
+  right: 32rpx;
+  bottom: 32rpx;
+  left: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 118, 110, 0.28);
+}

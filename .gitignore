@@ -1,0 +1,41 @@
+# ---- 敏感配置：绝不提交 ----
+# 微信开发者工具的项目私有配置（本机设置，可能含帐号相关字段）
+project.private.config.json
+miniprogram/project.private.config.json
+.env
+.env.*
+!.env.example
+*.local
+
+# ---- 密钥与证书 ----
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# ---- 依赖与构建产物 ----
+node_modules/
+miniprogram_npm/
+cloudfunctions/*/node_modules/
+# uni-app / HBuilderX 的打包产物目录。
+# 本仓库是原生小程序、当前用不到，但保留这条：一旦将来引入 uni-app，
+# 或者有人用 HBuilderX 打开这个项目，产物目录会被自动生成且体积很大。
+unpackage/
+*.tgz
+*.zip
+
+# ---- 日志与临时文件 ----
+*.log
+npm-debug.log*
+yarn-error.log*
+*.tmp
+.cache/
+
+# ---- 操作系统与编辑器 ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,149 @@
+.banner {
+  margin-bottom: 20rpx;
+  padding: 20rpx 24rpx;
+  border-radius: 8rpx;
+  background: #e0f2f1;
+  color: #0f766e;
+  font-size: 26rpx;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.field-label {
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.overall-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.overall-value {
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.overall-caption {
+  margin-left: 16rpx;
+  color: #667085;
+  font-size: 26rpx;
+}
+
+/* D2：口径声明紧跟整体转化率数字 */
+.disclaimer {
+  margin-top: 10rpx;
+  color: #98a2b3;
+  font-size: 22rpx;
+}
+
+.warn {
+  margin-top: 12rpx;
+  color: #b42318;
+  font-size: 24rpx;
+}
+
+.window-row {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.window-chip {
+  margin-right: 16rpx;
+  padding: 12rpx 28rpx;
+  border: 1rpx solid #d0d5dd;
+  border-radius: 999rpx;
+  color: #475467;
+  font-size: 26rpx;
+}
+
+.window-chip.is-active {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.comparison-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 16rpx;
+}
+
+.comparison-value {
+  margin-left: 16rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.anomaly-card {
+  background: #fffbfa;
+}
+
+.anomaly-text {
+  color: #475467;
+  font-size: 26rpx;
+}
+
+.anomaly-text.is-alert {
+  color: #b42318;
+  font-weight: 700;
+}
+
+.chart {
+  width: 100%;
+}
+
+.chart-funnel {
+  /* 比原来多留 40rpx：漏斗让出底部说明行之后，整体高度不至于变紧 */
+  height: 500rpx;
+}
+
+.chart-line {
+  height: 340rpx;
+}
+
+.chart-column {
+  height: 220rpx;
+}
+
+.metric-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8rpx;
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  margin-right: 24rpx;
+  margin-bottom: 12rpx;
+}
+
+.metric-label {
+  margin-left: 6rpx;
+  font-size: 24rpx;
+}
+
+.manage-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.manage-button {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 16rpx 28rpx;
+  border: 1rpx solid #d0d5dd;
+  border-radius: 8rpx;
+  color: #475467;
+  font-size: 26rpx;
+}
+
+.manage-button.is-danger {
+  border-color: #f4c7c1;
+  color: #b42318;
+}

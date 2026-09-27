@@ -1,0 +1,9 @@
+{
+  "name": "createFunnel",
+  "version": "1.0.0",
+  "description": "创建漏斗。按 ADR-0006，写入只能走云函数；按 ADR-0003，_openid 由服务端显式写入。",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

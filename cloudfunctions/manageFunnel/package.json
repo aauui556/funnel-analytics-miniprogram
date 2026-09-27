@@ -1,0 +1,9 @@
+{
+  "name": "manageFunnel",
+  "version": "1.0.0",
+  "description": "漏斗管理：重命名、修改阶段名称、删除漏斗。按 ADR-0006 写入只能走云函数；按 ADR-0003 做归属校验；改名依据 ADR-0002 的下标身份，不重写历史记录。",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

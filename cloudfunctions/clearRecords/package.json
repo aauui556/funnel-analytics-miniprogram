@@ -1,0 +1,9 @@
+{
+  "name": "clearRecords",
+  "version": "1.0.0",
+  "description": "清空指定漏斗的全部每日记录。按 ADR-0006 写入只能走云函数；按 ADR-0003 做归属校验。",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

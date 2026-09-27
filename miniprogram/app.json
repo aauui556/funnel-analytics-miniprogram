@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/funnel-create/funnel-create",
+    "pages/data-import/data-import",
+    "pages/funnel-detail/funnel-detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "Funnel Analytics",
+    "navigationBarBackgroundColor": "#0F766E",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F6F7F2",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

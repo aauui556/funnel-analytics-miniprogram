@@ -1,0 +1,93 @@
+<view class="page">
+  <!-- D26：从导入页跳转过来时的回执 -->
+  <view class="banner" wx:if="{{showBanner}}">{{banner}}</view>
+
+  <view class="card section" wx:if="{{loadError}}">
+    <view class="muted">{{loadError}}</view>
+  </view>
+
+  <block wx:else>
+    <!-- 顶部：整体转化率 + 口径声明（D10 / D2） -->
+    <view class="card section">
+      <view class="field-label">{{funnelName}}</view>
+      <view class="overall-row">
+        <text class="overall-value">{{overallText}}</text>
+        <text class="overall-caption">整体转化率</text>
+      </view>
+      <!-- D2：这行必须紧跟在最容易被误读的数字下面 -->
+      <view class="disclaimer">{{disclaimer}}</view>
+      <view class="warn" wx:if="{{overallNote}}">{{overallNote}}</view>
+    </view>
+
+    <!-- 窗口与环比（D12 / D24） -->
+    <view class="card section">
+      <view class="field-label">时间窗口</view>
+      <view class="window-row">
+        <view
+          class="window-chip {{windowSize === item ? 'is-active' : ''}}"
+          wx:for="{{windowOptions}}"
+          wx:key="*this"
+          data-size="{{item}}"
+          bindtap="onWindowChange"
+        >{{item}} 天</view>
+      </view>
+      <view class="muted">{{windowLabel}}</view>
+      <view class="comparison-row">
+        <text class="muted">环比</text>
+        <text class="comparison-value">{{comparisonValue}}</text>
+      </view>
+      <view class="muted" wx:if="{{comparisonReason}}">{{comparisonReason}}</view>
+    </view>
+
+    <!-- D17：跨图表异常摘要，可点开看判定依据 -->
+    <view class="card section anomaly-card" bindtap="onAnomalySummaryTap">
+      <view class="anomaly-text {{hasAnomalies ? 'is-alert' : ''}}">{{anomalySummary}}</view>
+    </view>
+
+    <view class="card section" wx:if="{{emptyHint}}">
+      <view class="muted">{{emptyHint}}</view>
+    </view>
+
+    <!-- 图表区：没有数据时整体不渲染。canvas 画不出东西，留着空画布只会让人以为图坏了。 -->
+    <block wx:if="{{!emptyHint}}">
+      <!-- D18/D19/D20：梯形漏斗 -->
+      <view class="card section">
+        <view class="field-label">漏斗（窗口内合计）</view>
+        <canvas type="2d" id="funnelCanvas" class="chart chart-funnel"></canvas>
+      </view>
+
+      <!-- D16/D17：折线图，单线切换 -->
+      <view class="card section">
+        <view class="field-label">转化率趋势</view>
+        <radio-group class="metric-group" bindchange="onMetricChange">
+          <label class="metric-item" wx:for="{{metricOptions}}" wx:key="key">
+            <radio value="{{item.key}}" checked="{{metricKey === item.key}}" color="#0F766E" />
+            <text class="metric-label">{{item.label}}</text>
+          </label>
+        </radio-group>
+        <canvas type="2d" id="lineCanvas" class="chart chart-line" bindtap="onLineTap"></canvas>
+        <view class="muted">红点是异常当天。点一下折线可以查看那天的数值或异常依据。</view>
+      </view>
+
+      <!-- D6：入口人数独立呈现，与折线图上下并列 -->
+      <view class="card section">
+        <view class="field-label">入口人数（{{stages[0]}}）</view>
+        <canvas type="2d" id="columnCanvas" class="chart chart-column"></canvas>
+        <view class="muted">转化率与人数量纲不同，所以不画在同一张图里。</view>
+      </view>
+    </block>
+
+    <!-- D25：漏斗管理。
+         刻意放在 emptyHint 判断**之外**：一个刚建好、还没导入数据的漏斗同样需要
+         改名和删除。之前它被关在图表区里，导致空漏斗既看不了数据也删不掉。 -->
+    <view class="card section">
+      <view class="field-label">管理</view>
+      <view class="manage-grid">
+        <view class="manage-button" bindtap="renameFunnel">重命名漏斗</view>
+        <view class="manage-button" bindtap="renameStage">修改阶段名称</view>
+        <view class="manage-button is-danger" bindtap="clearRecords">清空全部数据</view>
+        <view class="manage-button is-danger" bindtap="deleteFunnel">删除漏斗</view>
+      </view>
+    </view>
+  </block>
+</view>

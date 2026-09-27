@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="section">
+    <view class="title">新建漏斗</view>
+    <view class="muted">阶段数量限 3–7 段。创建后不能增删阶段，只能改名。</view>
+  </view>
+
+  <!-- 漏斗名称 -->
+  <view class="card section">
+    <view class="field-label">漏斗名称</view>
+    <input
+      class="field-input"
+      value="{{name}}"
+      maxlength="40"
+      placeholder="例如：抖音投放转化"
+      bindinput="onNameInput"
+    />
+  </view>
+
+  <!-- 场景模板（对应 D23） -->
+  <view class="card section">
+    <view class="field-label">场景模板</view>
+    <view class="muted hint">选择模板会填入默认阶段；切换模板会覆盖你对阶段做过的修改。</view>
+    <radio-group class="scenario-group" value="{{scenarioKey}}" bindchange="onScenarioChange">
+      <label class="scenario-item" wx:for="{{scenarioOptions}}" wx:key="key">
+        <radio value="{{item.key}}" checked="{{scenarioKey === item.key}}" color="#0F766E" />
+        <text class="scenario-label">{{item.label}}</text>
+      </label>
+    </radio-group>
+  </view>
+
+  <!-- 阶段编辑（对应 D22：创建时可增删，创建后锁定） -->
+  <view class="card section">
+    <view class="stage-head">
+      <view class="field-label">阶段（{{stages.length}}/{{stageMax}}）</view>
+      <text class="muted">最少 {{stageMin}} 段</text>
+    </view>
+
+    <view class="stage-row" wx:for="{{stages}}" wx:key="key">
+      <text class="stage-index">{{index + 1}}</text>
+      <input
+        class="stage-input"
+        value="{{item.name}}"
+        maxlength="{{stageNameMax}}"
+        placeholder="阶段名称"
+        data-index="{{index}}"
+        bindinput="onStageNameInput"
+      />
+      <view
+        class="stage-remove {{canRemove ? '' : 'is-disabled'}}"
+        data-index="{{index}}"
+        bindtap="removeStage"
+      >删除</view>
+    </view>
+
+    <view class="stage-add {{canAdd ? '' : 'is-disabled'}}" bindtap="addStage">
+      {{addStageText}}
+    </view>
+  </view>
+
+  <view class="error" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+
+  <button class="button save-button" bindtap="save" loading="{{saving}}" disabled="{{saving}}">
+    保存
+  </button>
+</view>

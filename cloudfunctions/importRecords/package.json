@@ -1,0 +1,9 @@
+{
+  "name": "importRecords",
+  "version": "1.0.0",
+  "description": "导入每日漏斗数据。按 ADR-0006 写入只能走云函数；ADR-0003 显式写 _openid；ADR-0002 以确定性 _id 实现「漏斗+日期」覆盖式写入；D9 用事务保证整批原子。",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

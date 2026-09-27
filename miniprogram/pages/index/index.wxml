@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="section">
+    <view class="title">我的漏斗</view>
+    <view class="muted">按创建时间倒序排列。数据按微信用户隔离，只有你自己能看到。</view>
+  </view>
+
+  <!-- 空状态：没有漏斗、不在加载、也没有错误时才显示 -->
+  <view class="card section" wx:if="{{!funnels.length && !loading && !loadError}}">
+    <view class="muted">还没有漏斗。点击下方「新建漏斗」，从模板创建一个。</view>
+  </view>
+
+  <view class="card section" wx:if="{{loadError}}">
+    <view class="muted">{{loadError}}</view>
+  </view>
+
+  <view class="card funnel-item" wx:for="{{funnels}}" wx:key="_id">
+    <view class="funnel-main" data-id="{{item._id}}" bindtap="openFunnel">
+      <view class="funnel-head">
+        <text class="funnel-name">{{item.name}}</text>
+        <text class="tag">{{item.scenarioLabel}}</text>
+      </view>
+      <view class="muted funnel-meta">{{item.stageCount}} 个阶段 · 创建于 {{item.createdAtText}}</view>
+    </view>
+    <!-- 卡片主体进详情页；「录入数据」是并排的快捷入口，用 catchtap 阻止冒泡到卡片 -->
+    <view class="funnel-actions">
+      <view class="action-button" data-id="{{item._id}}" catchtap="goImport">录入数据</view>
+    </view>
+  </view>
+
+  <view class="muted list-foot" wx:if="{{loading}}">加载中…</view>
+  <view class="muted list-foot" wx:elif="{{funnels.length && finished}}">没有更多了</view>
+
+  <button class="button create-button" bindtap="goCreate">新建漏斗</button>
+</view>

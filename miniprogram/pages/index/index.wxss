@@ -1,0 +1,70 @@
+/* 底部固定按钮会盖住列表最后一项，所以给页面留出等高的空白 */
+.page {
+  padding-bottom: 200rpx;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.funnel-item {
+  margin-bottom: 20rpx;
+}
+
+.funnel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.funnel-name {
+  flex: 1;
+  margin-right: 16rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  flex: none;
+  padding: 6rpx 16rpx;
+  border-radius: 999rpx;
+  background: #e0f2f1;
+  color: #0f766e;
+  font-size: 22rpx;
+}
+
+.funnel-meta {
+  margin-top: 12rpx;
+}
+
+.funnel-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #eef2f7;
+}
+
+.action-button {
+  padding: 12rpx 28rpx;
+  border: 1rpx solid #0f766e;
+  border-radius: 8rpx;
+  color: #0f766e;
+  font-size: 26rpx;
+}
+
+.list-foot {
+  padding: 16rpx 0;
+  text-align: center;
+}
+
+.create-button {
+  position: fixed;
+  right: 32rpx;
+  bottom: 32rpx;
+  left: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 118, 110, 0.28);
+}
